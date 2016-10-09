@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+                System.out.println("Enter the number of months");
+        int days = sc.nextInt();
+        
+        String month;
+        switch (days) {
+            case 28:  month = "February";
+                      break;
+            case 30:  month = "April June September November";
+                      break;
+            case 31:  month = "January March May July August October December";
+                      break;
+            default:  month = "No months have exactly " + days + " days";
+                      break;
+        }
+        System.out.println(month);
+		
+	}
+        
+}
