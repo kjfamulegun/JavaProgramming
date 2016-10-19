@@ -1,9 +1,22 @@
-import java.util.Random;
-public class Midterm
-{
-	public static void main (String[] args) 
-	{
-		int dice1 = (int)(Math.random()* 6) + 1;
+package crapsgame;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author KJ Famulegun
+ */
+public class Crapsgame {
+
+    public static void main(String[] args) {
+        int wins = 0;
+        int loss = 0;
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter amount to bet: ");
+        int bet = keyboard.nextInt();
+          for (int i = 0; i < 10; i++){
+
+        int dice1 = (int)(Math.random()* 6) + 1;
 		int dice2 = (int)(Math.random()* 6) + 1;
 		int roll = dice1 + dice2;
 		System.out.println();
@@ -11,9 +24,11 @@ public class Midterm
 	// Lose
 		if(roll == 2 || roll == 3 || roll == 12){
 			System.out.println("You Lose!");
+                        loss = loss + 1;
 	// Win
 		}else if(roll == 7 || roll == 11){
 			System.out.println("You Win!");
+                        wins = wins + 1;
 		}else{
 	// Point 1
 			System.out.println("Point is "+roll+"\n");
@@ -26,6 +41,7 @@ public class Midterm
 			while(roll2 != 7){
 				if(roll == roll2){
 					System.out.println("You Win!");
+                                        wins = wins + 1;
 					break;
 				}else{
 					System.out.println("Point is "+roll+"\n");
@@ -38,7 +54,16 @@ public class Midterm
 			}
 			if(roll2 == 7){
 				System.out.println("You Lose!");
+                                loss = loss + 1;
 			}			
 		}
-	}
+          }
+        System.out.println ("\nnumber of wins = " + wins
+        + " and number of loss = " + loss);
+        int bank = wins*bet-loss*bet;
+        
+        System.out.println ("\n You have $"+ bank);
+        
+    }
+    
 }
