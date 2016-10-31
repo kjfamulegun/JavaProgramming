@@ -1,1 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package random;
 
+/**
+ *
+ * @author Kansola
+ */
+import java.util.*;
+import java.io.*;
+import java.util.Random;
+
+public class randomIntegers {
+
+    public static void main(String[] args) {
+
+        Scanner console = new Scanner(System.in);
+        Random num = new Random();
+        int low = 1;
+        int high = 20;
+        int num1 = num.nextInt((high - low) + 1) + low;
+        List<Integer> arrList;
+
+        System.out.println("Number 1: " + num1);
+        System.out.println("Input numbers between 1 and 20, input Q to quit");
+        arrList = new ArrayList<Integer>();
+        while (console.hasNextInt()) {
+            arrList.add(console.nextInt());
+        }
+        System.out.println("Number 2: " + arrList.size());
+    }
+}
